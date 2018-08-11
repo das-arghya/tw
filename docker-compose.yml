@@ -1,0 +1,23 @@
+version: "3"
+
+services:
+  proxy:
+    image: "localhost:5000/proxy"
+    ports:
+    - 80:80
+    networks:
+    - net
+    depends_on:
+    - app
+    hostname: proxy
+  app:
+    image: "localhost:5000/app"
+    ports:
+    - 8080
+    networks:
+    - net
+    hostname: app
+networks:
+  net:
+    driver: overlay
+
