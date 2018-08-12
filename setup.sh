@@ -23,11 +23,13 @@ base=https://github.com/docker/machine/releases/download/v0.14.0 &&
 
 echo "## creating swarm-master node on aws ##"   
 
-docker-machine create --driver amazonec2 --amazonec2-access-key $aws_access_key --amazonec2-secret-key $aws_secret_key --amazonec2-use-private-address --amazonec2-ami ami-759bc50a --amazonec2-open-port 2377  swarm-master
+OPEN_PORTS="--amazonec2-open-port 2377 --amazonec2-open-port 7946 --amazonec2-open-port 4789 --amazonec2-open-port 7946/udp --amazonec2-open-port 4789/udp --amazonec2-open-port 80"
+
+docker-machine create --driver amazonec2 --amazonec2-access-key $aws_access_key --amazonec2-secret-key $aws_secret_key --amazonec2-use-private-address --amazonec2-ami ami-759bc50a $OPEN_PORTS swarm-master
 
 echo "## creating swarm-worker node on aws ##"
 
-docker-machine create --driver amazonec2 --amazonec2-access-key $aws_access_key --amazonec2-secret-key $aws_secret_key --amazonec2-use-private-address --amazonec2-ami ami-759bc50a --amazonec2-open-port 80  swarm-node
+docker-machine create --driver amazonec2 --amazonec2-access-key $aws_access_key --amazonec2-secret-key $aws_secret_key --amazonec2-use-private-address --amazonec2-ami ami-759bc50a $OPEN_PORTS  swarm-node
 
 echo "## Initialize swarm manager node ##"
 

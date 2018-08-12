@@ -12,6 +12,8 @@ services:
     hostname: proxy
   app:
     image: "localhost:5000/app"
+    deploy:
+      replicas: 2
     ports:
     - 8080
     networks:
