@@ -14,8 +14,8 @@ Static content Hosting Container: Nginx
 1. Clone this repository into your workstation
 2. change directory inside the repo (tw)
 3. switch into root user to avoid permission issues.
-4. Run the script setup.sh
-5. Run the test.sh to check the application deployment
+4. Run the script "setup.sh"
+5. Run the "test.sh" to check the application deployment
 
 WARNING!
 Sometimes the provisioning of ec2 machines on AWS fails on apt-get, it happens randomly maybe 1 out of 3,4 times. I was not able to find a root cause for the issue, could track it to this:
