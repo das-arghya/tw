@@ -16,6 +16,7 @@ Static content Hosting Container: Nginx
 2. change directory inside the repo (tw)
 3. switch into root user to avoid permission issues.
 4. Run the script setup.sh
+5. Run the test.sh to check the application deployment
 
 #What does the script(setup.sh) do?
 
