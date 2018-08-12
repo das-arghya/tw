@@ -9,6 +9,14 @@ Virtualization / Clustering engine: Docker swarm
 Application container : Apache tomcat
 Static content Hosting Container: Nginx
 
+WARNING!
+Sometimes the provisioning of ec2 machines on AWS fails on apt-get, it happens randomly maybe 1 out of 3,4 times. I was not able to find a root cause for the issue, could track it to this:
+https://github.com/docker/machine/issues/3990
+
+*Only solution for now is to re-provision the machines using the script.
+
+Okay lets move on :
+
 
 #Instructions:
 
