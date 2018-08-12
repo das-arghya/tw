@@ -8,9 +8,9 @@ Once the application components are deployed  as services to a swarm, we can use
 Any number of Tomcat instances can be configured for load-balancing using NGINX's default round-robin algorithm. Load-balancing is configured through the default.conf file, in the upstream configuration section:
 
 upstream backend {
-  tw_app_1:8080;
-  tw_app_2:8080;
-  tw_app_3:8080;
+  app_ip1:8080;
+  app_ip2:8080;
+  app_ip3:8080;
 }
 
 Hardware requirements:
