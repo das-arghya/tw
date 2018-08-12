@@ -2,12 +2,12 @@
 
 #Hardware and software used in the demo stack :
 
-Workstation : Ubuntu 16.04 server (aws ec2)
-Cloud Infra provider : Amazon web services
-AMI (for generating two swarm machines ): ami-759bc50a [Ubuntu 16.04]
-Virtualization / Clustering engine: Docker swarm
-Application container : Apache tomcat
-Static content Hosting Container: Nginx
+* Workstation : Ubuntu 16.04 server (aws ec2)
+* Cloud Infra provider : Amazon web services
+* AMI (for generating two swarm machines ): ami-759bc50a [Ubuntu 16.04]
+* Virtualization / Clustering engine: Docker swarm
+* Application container : Apache tomcat (port:8080 - not exposed outside of host)
+* Static content Hosting Container: Nginx (port:80)
 
 #Instructions:
 
@@ -16,6 +16,7 @@ Static content Hosting Container: Nginx
 3. switch into root user to avoid permission issues.
 4. Run the script "setup.sh"
 5. Run the "test.sh" to check the application deployment
+6. The application should be available via nginx on default port 80.
 
 WARNING!
 Sometimes the provisioning of ec2 machines on AWS fails on apt-get, it happens randomly maybe 1 out of 3,4 times. I was not able to find a root cause for the issue, could track it to this:
