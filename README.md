@@ -1,7 +1,14 @@
 # This repository contains scripts to build two separate docker containers one hosting dynamic content (.war) deployed into tomcat and the other container containing static content (.zip) hosted by nginx and deploy the containers into docker swarm cluster.
 
-Prerequisites :
-Workstation : Ubuntu 16.04 server 
+#Hardware and software used in the demo stack :
+
+Workstation : Ubuntu 16.04 server (aws ec2)
+Cloud Infra provider : Amazon web services
+AMI (for generating two swarm machines ): ami-759bc50a [Ubuntu 16.04]
+Virtualization / Clustering engine: Docker swarm
+Application container : Apache tomcat
+Static content Hosting Container: Nginx
+
 
 #Instructions:
 
